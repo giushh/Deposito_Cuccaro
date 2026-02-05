@@ -3,7 +3,7 @@
 # Esercizio completo 
 print("********** Esercizio completo **********")
 
-print("----- Punto 1 -----")
+print("\n----- Punto 1 -----")
 # scrivi un sistema che controlli un num in input se è pari/dispari
 num = int(input("Dimmi un numero, ti dirò se è pari o dispari: "))
 
@@ -13,7 +13,7 @@ else:
     print("Il numero ", num, " è dispari")
 
 
-print("----- Punto 2 -----")
+print("\n----- Punto 2 -----")
 # prendi in input un numero intero positivo e stampa tutti i numeri da n a 0 (compreso) decrementando di passo 1
 # deve ripetersi all'infinito
 
@@ -34,7 +34,7 @@ else:
     print("Il numero non è valido")
 
 
-print("----- Punto 3 -----")
+print("\n----- Punto 3 -----")
 # prendi in input una lista di numeri e stampa il quadrato di ogni elemento della lista
 
 print("Facciamo una lista di numeri")
@@ -49,12 +49,15 @@ while not stop:
     if ans2 == "y":
         stop = True
 
-print("Stampo i quadrati dei numeri presenti nella lista ")
+print("Stampo i quadrati dei numeri presenti nella lista ->", lista)
+quadrati = []
+
 for n in lista:
-    print(n * n)
+    quadrati.append(n * n)
 
+print("Quadrati dei numeri:", quadrati)
 
-print("----- Punto 4 -----")
+print("\n----- Punto 4 -----")
 # usa if, while e for insieme
 # 1) trova massimo con for
 # 2) conta elementi con while
@@ -74,5 +77,6 @@ else:
         conteggio += 1
         i += 1
 
-    print("Il numero massimo trovato è:", massimo)
+    print("Lista: ", lista)
+    print("Il numero massimo della lista: ", massimo)
     print("Il numero di elementi nella lista è:", conteggio)
