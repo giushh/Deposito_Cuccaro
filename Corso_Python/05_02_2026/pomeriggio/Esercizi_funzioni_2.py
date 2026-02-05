@@ -17,7 +17,7 @@ e ogni numero successivo è la somma dei due precedenti
 
 def fibonacci(n):
     """
-    Stampa la sequenza di Fibonacci fino al numero inferiore a n"""
+    Stampa la sequenza di Fibonacci fino all'ultimo numero prima di n"""
     
     a = 0                 # Inizializziamo i primi due numeri della sequenza
     b = 1
@@ -30,7 +30,7 @@ def fibonacci(n):
 
 print("\n********** Sequenza di Fibonacci **********")
 
-n = int(input("Quanti numeri della sequenza di Fibonacci vuoi stampare? "))
+n = int(input("Limite superiore della sequenza? "))
 
 fibonacci(n)
 
