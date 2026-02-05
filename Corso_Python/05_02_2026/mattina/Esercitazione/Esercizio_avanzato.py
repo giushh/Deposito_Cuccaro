@@ -16,30 +16,54 @@ print("Numeri coprimi")
 
 
 while True:
-    num1 = int(input("Dimmi un numero"))
-    num2 = int(input("Dimmi un altro numero"))
+    num1 = int(input("\nDimmi un numero "))
+    num2 = int(input("\nDimmi un altro numero "))
     
     fattori = []
-    # Determina il numero più piccolo tra i due
-    minore = min(num1, num2)
     
-    # Controlla divisibilità da 1 al numero minore
-    for i in range(1, minore + 1):
+    minore = min(num1, num2)                            # determina il numero più piccolo tra i due
+    
+    for i in range(1, minore + 1):                      # controlla divisibilità da 1 al numero minore
         if num1 % i == 0 and num2 % i == 0:
             fattori.append(i)
     
     if len(fattori) == 1:
         if fattori[0] == 1:
-            print("I numeri sono coprimi")
+            print("\nI numeri sono coprimi")
+    else:
+        print("I numeri non sono coprimi, hanno in comune", fattori)
     
-    
+    str1 = input("\nInserisci la prima stringa: ")
+    str2 = input("\nInserisci la seconda stringa: ")
 
-    scelta2 = input("Vuoi uscire? (y/n) [se non esci, ricominciamo]")          # se non esce, ricomuncia il ciclo
+    lettere1 = []                                           # lista delle lettere della prima stringa
+    for c in str1:
+        if c not in lettere1:
+            lettere1.append(c)
+
+    lettere2 = []                                           # lista delle lettere della seconda stringa
+    for c in str2:
+        if c not in lettere2:
+            lettere2.append(c)
+            
+    comuni = []
+
+    for c in lettere1:
+        if c in lettere2:
+            comuni.append(c)                                # controllo lettere comuni
+
+    if len(comuni) == len(lettere1) and len(comuni) == len(lettere2):
+        print("\nLe stringhe sono complementari")
+    else:
+        print("\nLe stringhe non sono complementari")
+
+    
+    scelta2 = input("\nVuoi uscire? (y/n) [se non esci, ricominciamo]")          # se non esce, ricomuncia il ciclo
     if scelta2 == "n":
         continue                # spezza l'iterazione corrente e ricomincia
     elif scelta2 == "y":
-        print("Addio")
+        print("\nAddio")
         break                   # esce dal ciclo while
     else: 
-        print("Scelta non valida. Uscita")
+        print("\nScelta non valida. Uscita")
         break                   # esce dal ciclo while    
