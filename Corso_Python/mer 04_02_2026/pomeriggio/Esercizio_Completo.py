@@ -58,10 +58,9 @@ for n in lista:
 print("Quadrati dei numeri:", quadrati)
 
 print("\n----- Punto 4 -----")
-# usa if, while e for insieme
-# 1) trova massimo con for
-# 2) conta elementi con while
-# 3) se lista vuota stampa "Lista Vuota", altrimenti stampa massimo e numero di elementi
+# 1. trova massimo con for
+# 2. conta elementi con while
+# 3. se lista vuota stampa "Lista Vuota", altrimenti stampa massimo e numero di elementi
 
 if len(lista) == 0:
     print("Lista Vuota")
