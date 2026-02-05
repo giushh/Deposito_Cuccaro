@@ -19,7 +19,7 @@ stop = False                                                        # variabile 
 while not stop:
     n = int(input("\nInserisci un numero intero positivo: "))       # PUNTO 1
     
-    if n <= 0:                                                      # continuerà a chiedere un numero finchè non è positivo e diverso da zero
+    if n <= 0 or n == 0:                                            # continuerà a chiedere un numero finchè non è positivo e diverso da zero
         print("\nNon mi piace questo numero, riprova.")             # dato che n è di tipo intero, se viene inserito un float va in errore 
         continue
     
