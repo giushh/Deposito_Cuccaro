@@ -92,6 +92,7 @@ def logger(funzione):
         print(risultato)
         print(f"[DOPO] Risultato di {funzione.__name__}: {risultato}")
         # return risultato
+        # invece di tornare il risultato lo stampo tra prima e dopo
     return wrapper
 
 @logger
