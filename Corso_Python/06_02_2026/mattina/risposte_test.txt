@@ -1,0 +1,51 @@
+3
+una collezione è un insieme di variabili, più o meno omogenee, raggruppate e salvate in un unico posto.
+hanno 3 caratteristiche principali 
+- modificabili / non modificabili
+- ordinate / non ordinate (presenza di un indice per l'accesso o meno)
+- miste / non miste (avere o no più di 1 tipo)
+extra: ogni collezione ha un tipo per essere definita (esempio: list [], tuple () ecc)
+
+5 pyton è:
+- un linguaggio di programmazione -- presenta controllori di flusso, con regole ben precise da seguire)
+- interpretato -- il codice viene letto da un "interprete" e se non ci sono errori lo esegue. è diverso da "compilato" ed "eseguito" in quanto l'intepretazione risulta un'operazione più lenta ma più sicura 
+- ad oggetti -- segue le regole dell'OOP ma non solo, di base è multiparadigma, accetta anche programmazione imperativa e funzionale
+- dinamico -- accetta il cambio di tipo ma non l'assenza di tipo, quindi si dice che è fortemente dinamicamente tipizzato
+- ad alto livello -- la sua sintassi è più vicina al linguaggio umano che a quello delle macchine. questo implica una maggiore facilità d'uso per i programmatori ma una difficoltà maggiore per la macchina per appunto interpretare ciò che è stato scritto 
+
+7
+una variabile è un contentitore di informazioni, la quale è composta da 3 parti (nome, valore, tipo)
+ in particolare la sintassi per definirla è -> [nome] = [valore] 
+dove implicitamente il valore ne andrà a definire il tipo (se non diversamente specificato)
+
+esistono principalmente 2 tipi di variabili: basilari e non basilari
+- basilari: già definite nel linguaggio e "pronte all'uso". per esempio numeri interi, numeri deciamali, booleani, char e diciamo anche le stringhe (ci sono diverse opinioni a riguardo, se sono tipo basilare o meno, ma generalemente dato che è usabile senza dichiarare nulla a priori possiamo dire che è basilare)
+- non basilari: sono tutti i tipi di variabili che non esiste già in python e deve essere creato per poterlo usare. per esempio gli oggetti
+
+9
+una funzione è un blocco di codice autonomo all'interno del programma.
+implicitamente dimostra l'esistenza dell'astrazione nella programmazione
+esistono 2 tipi:
+- con ritorno -- sono in grado di restituire variabili alla parte di codice che l'ha chiamata, quando per esempio abbiamo bisogno di un calcolo ricorrente, ne facciamo una funzione in modo che ci restituisca il risultato, senza dover ogni volta riscrivere il procedimento del calcolo
+- senza ritorno -- è una funzione che non restituisce nulla al programma chiamante, fa delle elaborazioni al suo interno senza tornare nulla, per esempio stampa messaggi, fa calcoli ecc
+
+11
+SQL è un linguaggio di interrogazione (non di programmazione) che si occupa di chiedere ad una base di dati informazioni su ciò che contiene. rende la gestione di grosse quantità di dati molto semplice per via del database relazione su cui lavora. i dati sono salvati in modo strutturato e con una logica ben precisa
+
+13
+un operatore è una parola chiave, spesso associata ad un simbolo, che è in grado di fare operazioni tra gli operandi che coinvolge
+in particolare gli operatori:
+- aritmetici -- sono le classiche operazioni che si fanno prevalentemente sui numeri (python permette anche di sommare stringhe in realtà) quindi addizione +, sottrazione -, moltiplicazione *, divisione /, potenza **, % resto
+- logici -- per la valutazione di espressioni booleane che accettano in risposta solo True/False. quelli basilari sono and (vera se tutte sono vere), or (vera se almeno una è vera), not (dà l'opposto di cio che segue). in realtà negli operatori logici rientrano anche quelli di confronto (maggiore >, minore <, uguale==) perchè come quelli logici restituiscono True/False
+- di assegnazione -- assegnano un nuovo valore alla variabile. (= assegna valore, += somma il valore che segue e lo assegna, idem con - * / % **)
+- di appartenenza -- si chiede se un dato valore appartiene a "qualcosa" (in/not in) (famiglia op. logici)
+- di identità -- si chiede se due valori sono identici (is/is not) (famiglia op. logici)
+
+15
+il controllo del flusso permette la gesitione delle istruzioni in un programma, decise se e quando e quante volte eseguire determinate istruzioni.
+abbiamo principalemente 3 famiglie: condizioni, cicli e funzioni
+- condizioni -- 1. [if - elif - else] eseguono il blocco di codice solo se la condizione verificata risulta True. in particolare inizia sempre con il comando if, poi possono esserci potenzialmente infiniti elif al centro (per altri controlli) ed infine finisce, ma non è obbligatorio, con un else che indica un "altrimenti", cioè tutte le condizioni precedenti non sono state verificate. 2. [match-case] permette di ottimizzare la catena if-elif andando a confontare il valore di una variabile con i diversi case, i quali avranno un blocco di codice dedicato, e quando trova corrispondenza esegue. esiste anche un caso default opzionale (case _) per quando nessuna delle precedenti è stata verificata
+
+- cicli -- 1. [for] il ciclo for permette di ripetere un numero finito di volte un blocco di codice, autoregola le ripetizioni. 2. [while] il ciclo while permette di ripetere potenzialmlente all'inifinito un blocco di codice, almeno fino a quando la condizione che verifica non sia più vera
+
+- funzioni -- le funzioni vengono definite con la parola chiave def e implementano nel codice un altro controllo di flusso, i salti. permettono di andare ad eseguire blocchi di codice salvati sia nello stesso file ma anche in altri progetti, importando opportunamente i file nel progetto corrente

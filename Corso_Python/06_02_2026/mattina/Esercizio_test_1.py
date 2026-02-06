@@ -28,13 +28,13 @@ def is_pari(x):
         pari = True
     return pari
 
-num = int(input("Dimmi un numero intero positivo: "))
+num = int(input("\nDimmi un numero intero positivo: "))
 
 if num <= 0:
     print("[Errore] - Il numero inserito non è intero positivo")
 else:
     lista = [*range(1, num+1,1)]
-    print("Stampo i numeri da 1 fino a", num)
+    print("\nStampo i numeri da 1 fino a", num)
     for n in lista:
         print(n)
         if is_pari(n):
