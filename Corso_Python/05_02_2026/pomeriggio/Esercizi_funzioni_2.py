@@ -1,7 +1,6 @@
 # Pomeriggio 05/02/2026
 # slide pagina 97
 
-
 """
 2. Esercizio Avanzato: Sequenza di Fibonacci fino a N
 Descrizione: Chiedi all'utente di inserire un numero N. Il
@@ -19,14 +18,14 @@ def fibonacci(n):
     """
     Stampa la sequenza di Fibonacci fino all'ultimo numero prima di n"""
     
-    a = 0                 # Inizializziamo i primi due numeri della sequenza
+    a = 0                # inizializziamo i primi due numeri della sequenza
     b = 1
 
     while a <= n:
-        print(a)      # Stampa il numero corrente della sequenza
-        c = a + b     # Calcola il numero successivo
-        a = b         # Aggiorna il primo valore
-        b = c         # Aggiorna il secondo valore
+        print(a)         # stampa il numero corrente della sequenza
+        c = a + b        # calcola il numero successivo
+        a = b            # aggiorna il primo valore
+        b = c            # aggiorna il secondo valore
 
 print("\n********** Sequenza di Fibonacci **********")
 
