@@ -60,5 +60,3 @@ elif not vinto:
 else:
     print("\nHai vinto!")
     print("\nNumero tentativi:", tentativi)
-
-

@@ -33,8 +33,8 @@ while True:
     else:
         print("I numeri non sono coprimi, hanno in comune", fattori)
     
-    str1 = input("\nInserisci la prima stringa: ")
-    str2 = input("\nInserisci la seconda stringa: ")
+    str1 = input("\nInserisci la prima stringa: ").lower()
+    str2 = input("\nInserisci la seconda stringa: ").lower()
 
     lettere1 = []                                           # lista delle lettere della prima stringa
     for c in str1:
