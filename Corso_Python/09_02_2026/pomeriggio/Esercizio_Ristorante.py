@@ -128,7 +128,7 @@ while not stop:
             print("\n-- Uscita")
             stop = True
         case _: 
-            print("Comando non valido. \n--Uscita")
-            stop = True
+            print("\nComando non valido. \nRiprova.")
+            continue
             
             
