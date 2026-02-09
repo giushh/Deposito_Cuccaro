@@ -79,6 +79,26 @@ class Negozio:
         else:
             print("\nArticolo non trovato.")
 
+    # ✅ AGGIUNTO: metodo per aggiornare un articolo (nome/prezzo/quantità)
+    @classmethod
+    def aggiorna_articolo(cls, codice, nuovo_nome=None, nuovo_prezzo=None, nuova_quantita=None):
+        codice = codice.upper()
+
+        if codice not in cls.inventario:
+            print("\nArticolo non trovato.")
+            return
+
+        if nuovo_nome is not None:
+            cls.inventario[codice]["nome"] = str(nuovo_nome)
+
+        if nuovo_prezzo is not None:
+            cls.inventario[codice]["prezzo"] = float(nuovo_prezzo)
+
+        if nuova_quantita is not None:
+            cls.inventario[codice]["quantita"] = int(nuova_quantita)
+
+        print("\nArticolo aggiornato.")
+
     @classmethod
     def acquista(cls, nome_cliente, codice, quantita):
         codice = codice.upper()
@@ -119,9 +139,9 @@ class Negozio:
 
 def solo_amministratore(funzione):
     def controllo(self, *args, **kwargs):
-        if not self.amministratore:
+        if not self.utente.amministratore:
             print("\nAccesso negato: solo amministratore.")
-            return
+            return None
         return funzione(self, *args, **kwargs)
     return controllo
 
@@ -176,6 +196,32 @@ class Utente:
             codice = input("Codice articolo: ")
             Negozio.rimuovi_articolo(codice)
 
+        # ✅ AGGIUNTO: metodo mancante chiamato dal menu (case "4")
+        @solo_amministratore
+        def aggiorna_articolo(self):
+            codice = input("\nCodice articolo da aggiornare: ").strip()
+
+            print("\nCosa vuoi aggiornare?")
+            print("1) Nome")
+            print("2) Prezzo")
+            print("3) Quantità")
+            scelta = input("Scelta: ")
+
+            if scelta == "1":
+                nuovo_nome = input("Nuovo nome: ")
+                Negozio.aggiorna_articolo(codice, nuovo_nome=nuovo_nome)
+
+            elif scelta == "2":
+                nuovo_prezzo = input("Nuovo prezzo: ")
+                Negozio.aggiorna_articolo(codice, nuovo_prezzo=nuovo_prezzo)
+
+            elif scelta == "3":
+                nuova_quantita = input("Nuova quantità: ")
+                Negozio.aggiorna_articolo(codice, nuova_quantita=nuova_quantita)
+
+            else:
+                print("\nScelta non valida.")
+
         @solo_amministratore
         def resoconto_vendite(self):
             Negozio.resoconto_vendite()
@@ -204,7 +250,6 @@ while not stop:
             cliente = Utente.Cliente(utente)
             amministratore = Utente.Amministratore(utente)
 
-            # --- secondo while: menu interno (cliente o admin) ---
             esci_area_personale = False
 
             while not esci_area_personale:
