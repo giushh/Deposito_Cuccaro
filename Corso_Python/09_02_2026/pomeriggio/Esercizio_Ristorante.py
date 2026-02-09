@@ -112,14 +112,14 @@ while not stop:
             else:
                 piatto = input("\nNome del piatto: ")
                 prezzo = int(input("Prezzo: "))
-                ristor_1.aggiungi_al_menu(piatto, prezzo)
+                ristor_1.aggiungi_al_menu(piatto.lower(), prezzo)
                 print(f"{piatto} aggiunto")
         case "6":
             if not ristor_1.aperto:
                 print(f"\nIl ristorante {ristor_1.nome} è chiuso, non puoi togliere piatti dal menu.")
             else:
                 ristor_1.stampa_menu()
-                piatto = input("\nChe piatto vuoi eliminare?")
+                piatto = input("\nChe piatto vuoi eliminare?").lower()
                 ristor_1.togli_dal_menu(piatto)
                 print(f"{piatto} rimosso")
         case "7":
