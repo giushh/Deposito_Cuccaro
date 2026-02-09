@@ -32,8 +32,7 @@ class Biblioteca:
     def mostra_num_libri(self):
         print(f"Sono presenti {self.num_libri} libri")
 
-        
-
+# main
 print("********** Biblioteca **********")
 
 stop = False

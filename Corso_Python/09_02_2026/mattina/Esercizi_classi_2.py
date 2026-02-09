@@ -37,7 +37,7 @@ while not stop:
             print("\n-- Inserimento libro")
             titolo = input("Titolo: ")
             autore = input("Autore: ")
-            pagine = input("Numero di pagine: ")
+            pagine = int(input("Numero di pagine: "))
             
             libro = Libro(titolo, autore, pagine)
             print("Libro inserito")
