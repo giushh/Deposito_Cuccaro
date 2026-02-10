@@ -58,6 +58,7 @@ class Negozio:
     @classmethod
     def aggiungi_articolo(cls, codice, nome, prezzo, quantita):
         codice = codice.upper()
+        # l'inventario è un dizionario innestato con chiave (codice) e valore un altro dizionario con nome, prezzo, quantità
         if codice in cls.inventario:
             cls.inventario[codice]["nome"] = nome
             cls.inventario[codice]["prezzo"] = float(prezzo)

@@ -17,75 +17,157 @@ e stampa: elenco pacchi “in magazzino”, elenco pacchi “in consegna” e il
 
 class Pacco:
     
-    stati = ["in magazzino", "in consegna", "consegnato"]
+    stati = ["magazzino", "consegna", "consegnato"]
     
-    def __init__(self, codice:str, peso:float, stato:str):      # stato può essere "in magazzino", "in consegna", "consegnato"
-        self.codice = codice
-        self.peso = peso
+    def __init__(self, magazzino, codice:str, peso:float, stato:str):
+        self.magazzino = magazzino
+        self.codice = codice.upper()
+        self.peso = float(peso)
+        self.stato = stato
         
-        # il costruttore si assicurerà che lo stato del pacco sia valido
-        # quando si creerà un oggetto di tipo Pacco ritornerà un valore di True/False
-        if stato in self.stati:
-            self.stato = stato
+        if self.stato in self.stati:
+            self.magazzino.aggiungi_modifica(self.codice, self.peso, self.stato)
+
+    def mostra_info(self):
+        print(f"[{self.codice}] Peso:{self.peso} - Stato:{self.stato}")
+    
+    def cambia_stato(self, nuovo_stato:str):
+        if nuovo_stato in self.stati:
+            self.stato = nuovo_stato
+            self.magazzino.aggiungi_modifica(self.codice, self.peso, self.stato)
             return True
         else:
             return False
-        
-    # metodi
-    def mostra_info(self):
-        pass
-    
-    def cambia_stato(self):
-        pass
-    
-            
+
 
 class Magazzino:
     
     lista_pacchi = {}
     
-    def __init__(self):
-        pass
+    def __init__(self, nome:str):
+        self.nome = nome
     
-    # metodi
+    def aggiungi_modifica(self, codice:str, peso, stato):
+        codice = codice.upper()
+        
+        if codice in self.lista_pacchi:
+            self.lista_pacchi[codice]["peso"] = float(peso)
+            self.lista_pacchi[codice]["stato"] = stato
+            print("\nOrdine aggiornato.")
+        else:
+            self.lista_pacchi[codice] = {
+                "peso" : float(peso),
+                "stato" : stato 
+            }
+            print("\nOrdine aggiunto.")
     
-    def aggiungi(self, codice:str, peso:float, stato:str):
-        pass
-    
-    def cerca(self, codice:str, peso:float, stato:str)
-        pass
+    def cerca_per_codice(self, codice:str):
+        codice = codice.upper()
+        
+        if codice in self.lista_pacchi:
+            print("\nOrdine trovato:\n")
+            print(f"[{codice}] Peso:{self.lista_pacchi[codice]['peso']} - Stato:{self.lista_pacchi[codice]['stato']}")
+        else:
+            print("Ordine non trovato.")
+
+    # [TO DO] def cerca_per_peso
+    # [TO DO] def cerca_per_stato
     
     def mostra_tutti(self):
-        pass
-    
-    
+        if not self.lista_pacchi:
+            print("\nNessun pacco presente.")
+            return
+        
+        for codice, dati in self.lista_pacchi.items():
+            print(f"[{codice}] Peso:{dati['peso']} - Stato:{dati['stato']}")
+
+    def mostra_per_stato(self, stato:str):
+        trovati = False
+        for codice, dati in self.lista_pacchi.items():
+            if dati["stato"] == stato:
+                print(f"[{codice}] Peso:{dati['peso']} - Stato:{dati['stato']}")
+                trovati = True
+        if not trovati:
+            print("\nNessun pacco trovato per questo stato.")
+
 
 class GestorePacchi:
     
-    def __init__(self):
-        pass
+    def __init__(self, magazzino:Magazzino):
+        self.magazzino = magazzino
+    
+    def cambio_stato(self, codice:str, stato_out:str):
+        codice = codice.upper()
+        
+        if codice in self.magazzino.lista_pacchi:
+            if stato_out in Pacco.stati:
+                self.magazzino.lista_pacchi[codice]["stato"] = stato_out
+                print("\nStato aggiornato.")
+            else:
+                print("\nStato non valido.")
+        else:
+            print("\nOrdine non trovato.")
+    
+    def calcolo_peso(self, lista_pacchi:dict):
+        totale = 0.0
+        for codice, dati in lista_pacchi.items():
+            totale += float(dati["peso"])
+        return totale
 
-# main
+    def calcolo_peso_non_consegnati(self):
+        totale = 0.0
+        for codice, dati in self.magazzino.lista_pacchi.items():
+            if dati["stato"] != "consegnato":
+                totale += float(dati["peso"])
+        return totale
+
 
 print("\n***** GESTORE PACCHI *****")
+
+magazzino = Magazzino("Magazzino Centrale")
+gestore = GestorePacchi(magazzino)
+
+p1 = Pacco(magazzino, "A001", 2.5, "magazzino")
+p2 = Pacco(magazzino, "B010", 1.2, "magazzino")
+p3 = Pacco(magazzino, "C036", 5.0, "magazzino")
+p4 = Pacco(magazzino, "D785", 0.8, "magazzino")
+p5 = Pacco(magazzino, "E004", 3.4, "magazzino")
 
 stop = False
 while not stop:
     
-    scelta = input("Cosa vuoi fare?"
-                   "1. Visualizza stato pacchi"
-                   "2. Cambia stato pacco"
-                   "3. Uscita")
+    scelta = input("\nPuoi:"
+                   "\n1. Visualizza stato pacchi"
+                   "\n2. Cambia stato pacco"
+                   "\n3. Uscita"
+                   "\nIndica il numero corrispondente \n> ")
     
     match scelta:
         case "1":
-            pass
+            print("\n--- Pacchi in magazzino ---")
+            magazzino.mostra_per_stato("magazzino")
+            print("\n--- Pacchi in consegna ---")
+            magazzino.mostra_per_stato("consegna")
+            print("\n--- Pacchi consegnati ---")
+            magazzino.mostra_per_stato("consegnato")
+            print("\nPeso totale pacchi non ancora consegnati:", gestore.calcolo_peso_non_consegnati())
     
         case "2":
-            pass
-        
+            codice = input("\nInserisci il codice pacco\n> ").upper()
+            if codice in magazzino.lista_pacchi:
+                stato = input("Inserisci il nuovo stato (magazzino / consegna / consegnato)\n> ")
+                
+                if stato in Pacco.stati:
+                    gestore.cambio_stato(codice, stato)
+                else:
+                    print("Stato non valido.")
+            else:
+                print("Codice pacco non presente in magazzino.")
+
         case "3":
-            pass
+            print("\n-- Uscita")
+            stop = True
         
         case _:
-            pass
+            print("\nComando non valido. \nRiprova.")
+            continue
