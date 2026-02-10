@@ -79,7 +79,7 @@ class Negozio:
         else:
             print("\nArticolo non trovato.")
 
-    # ✅ AGGIUNTO: metodo per aggiornare un articolo (nome/prezzo/quantità)
+    
     @classmethod
     def aggiorna_articolo(cls, codice, nuovo_nome=None, nuovo_prezzo=None, nuova_quantita=None):
         codice = codice.upper()
@@ -138,12 +138,12 @@ class Negozio:
 
 
 def solo_amministratore(funzione):
-    def controllo(self, *args, **kwargs):
+    def wrapper(self, *args, **kwargs):
         if not self.utente.amministratore:
             print("\nAccesso negato: solo amministratore.")
             return None
         return funzione(self, *args, **kwargs)
-    return controllo
+    return wrapper
 
 
 class Utente:
@@ -196,7 +196,6 @@ class Utente:
             codice = input("Codice articolo: ")
             Negozio.rimuovi_articolo(codice)
 
-        # ✅ AGGIUNTO: metodo mancante chiamato dal menu (case "4")
         @solo_amministratore
         def aggiorna_articolo(self):
             codice = input("\nCodice articolo da aggiornare: ").strip()
