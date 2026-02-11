@@ -66,6 +66,7 @@ class ContoBancario:
         if type(importo) != int and type(importo) != float:
             print("Errore: importo non valido")
             return False
+            # prova a mettere break qui
 
         importo = float(importo)
 
