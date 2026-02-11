@@ -61,8 +61,8 @@ class Giocatore(MembroSquadra):
 
         for cat in categorie:
             valore = self.esperienza[cat]
-            pieno = "■" * valore
-            vuoto = "□" * (5 - valore)
+            pieno = "★" * valore
+            vuoto = "☆" * (5 - valore)
             print(f" - {cat}: {pieno}{vuoto} ({valore}/5)")
 
 

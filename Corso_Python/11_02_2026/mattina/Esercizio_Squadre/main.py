@@ -1,5 +1,7 @@
 # mattina 11/02/2026
 
+import time
+
 """
 Creare una classe padre Membro squadra e una Squadra che conterrà le diverse classi figlie che rappresentano ruoli specifici 
 all'interno della squadra di calcio, come Giocatore, Allenatore, Assistente
