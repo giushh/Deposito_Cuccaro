@@ -14,6 +14,8 @@ class Gatto(Animale):
         print("Miao")
         
         
+# esempi mirko
+        
 """
 Esempio unificato di polimorfismo in Python:
 - Polimorfismo tramite ereditarietà (classe base Animale e sottoclassi Cane, Gatto)
