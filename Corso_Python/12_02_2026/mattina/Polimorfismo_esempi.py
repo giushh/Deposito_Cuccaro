@@ -19,3 +19,16 @@ gatto = Gatto()
 
 fai_parlare(cane) # Output: Bau!
 fai_parlare(gatto) # Output: Miao!
+
+
+class Utility:
+    
+    def fai_cose_su_oggetto(x:object):
+        pass
+    
+# richiamo la classe utility per quello che mi serve con l'oggetto che mi serve
+
+gatto_OBJ = Gatto()
+
+Utility.fai_cose_su_oggetto(gatto_OBJ)
+
