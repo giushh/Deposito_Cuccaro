@@ -41,7 +41,7 @@ class CartaDiCredito(MetodoPagamento):
     
     # metodi 
     def effettua_pagamento(self, importo):
-        print(f"Pagamento effettuato con carta di credito ({importo} euro)")
+        print(f"\n---> Pagamento effettuato con carta di credito ({importo} euro)")
 
 class Paypal(MetodoPagamento):
     # costruttore
@@ -51,7 +51,7 @@ class Paypal(MetodoPagamento):
     
     # metodi 
     def effettua_pagamento(self, importo):
-        print(f"Pagamento effettuato con Paypal ({importo} euro)")
+        print(f"\n---> Pagamento effettuato con Paypal ({importo} euro)")
         
 class BonificoBancario(MetodoPagamento):
     # costruttore
@@ -61,18 +61,18 @@ class BonificoBancario(MetodoPagamento):
     
     # metodi 
     def effettua_pagamento(self, importo):
-        print(f"Pagamento effettuato con bonifico bancario ({importo} euro)")
+        print(f"\n---> Pagamento effettuato con bonifico bancario ({importo} euro)")
 
 # gestore
 
 class GestorePagamenti:
     # costruttore
     def __init__(self, metodo):
-        self.metodo = metodo        # si specializza in base alla classe passata
+        self.metodo = metodo        # passa l'oggetto della classe specifica
 
     # metodi
-    def pagamento(self, metodo):       # stessi parametri di effettua_pagamento
-        metodo.effettua_pagamento(importo)     # richiama il metodo della classe corrispondente
+    def pagamento(self, importo):       # stessi parametri di effettua_pagamento
+        self.metodo.effettua_pagamento(importo)     # richiama il metodo della classe corrispondente
 
 
 
@@ -102,10 +102,26 @@ while not stop:
     
         case "2":
             stampa_metodi(metodi_disponibili)
-            quale_metodo = input("Come vuoi effettuare il pagamento? Scrivi il nome del pagamento\n").lower()
+
+            # l'utente sceglie con un numero 
+            indice = int(input("\nScegli il metodo inserendo il numero corrispondente: ")) - 1
+
+            # controllo indice
+            if indice < 0 or indice >= len(metodi_disponibili):
+                print("Scelta non valida.")
+                continue
+
+            # recupera il corrispondente oggetto 
+            metodo_scelto = metodi_disponibili[indice]
+
             importo = int(input("Importo: "))
-            gestore = GestorePagamenti(quale_metodo)
+
+            # gestore ottiene l'oggetto 
+            gestore = GestorePagamenti(metodo_scelto)
+
+            # viene eseguito il pagamento, senza sapere qualche classe sia
             gestore.pagamento(importo)
+
 
         case "3":
             print("\n-- Uscita")
