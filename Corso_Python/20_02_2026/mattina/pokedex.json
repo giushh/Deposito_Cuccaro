@@ -1,0 +1,37 @@
+[
+    {
+        "id": 323,
+        "nome": "camerupt",
+        "tipi": [
+            "fire",
+            "ground"
+        ],
+        "altezza": 19,
+        "peso": 2200,
+        "stats": {
+            "hp": 70,
+            "attack": 100,
+            "defense": 70,
+            "special-attack": 105,
+            "special-defense": 75,
+            "speed": 40
+        }
+    },
+    {
+        "id": 864,
+        "nome": "cursola",
+        "tipi": [
+            "ghost"
+        ],
+        "altezza": 10,
+        "peso": 4,
+        "stats": {
+            "hp": 60,
+            "attack": 95,
+            "defense": 50,
+            "special-attack": 145,
+            "special-defense": 130,
+            "speed": 30
+        }
+    }
+]
