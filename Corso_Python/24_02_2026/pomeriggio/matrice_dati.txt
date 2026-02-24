@@ -1,0 +1,51 @@
+Nuova matrice creata:
+[[47 33  2 42]
+ [28 45 10  7]
+ [46 15 24 17]]
+Sotto-matrice centrale:
+[[33  2]
+ [45 10]]
+Matrice trasposta:
+[[47 28 46]
+ [33 45 15]
+ [ 2 10 24]
+ [42  7 17]]
+Somma elementi: 316
+Nuova matrice creata:
+[[31 43  4 36]
+ [48  1 29 47]
+ [22 25 29 23]
+ [ 3 33  3 16]]
+Somma elementi: 393
+Nuova matrice creata:
+[[ 3 23 25 32]
+ [13  1 27  8]
+ [18 45 10 49]
+ [25 33 22 21]]
+Seconda matrice:
+[[30 33  9 14]
+ [29 37 20 23]
+ [ 3  4 41 17]
+ [42 28 21 16]]
+Moltiplicazione element-wise:
+[[  90  759  225  448]
+ [ 377   37  540  184]
+ [  54  180  410  833]
+ [1050  924  462  336]]
+Media elementi: 22.1875
+Nuova matrice creata:
+[[25 47 34 47 33 20 40 38 48]
+ [ 2 47 50 38 20 13 43 15 13]
+ [35 48 49 25  7 19 46 50 30]
+ [22  2 38 41 21 28 48 20 19]]
+Nuova matrice creata:
+[[40  8]
+ [44  8]]
+Matrice inversa:
+[[-0.25   0.25 ]
+ [ 1.375 -1.25 ]]
+Elementi > 8.0:
+[40 44]
+Funzione sin applicata:
+[[0.74511316 0.98935825]
+ [0.01770193 0.98935825]]
