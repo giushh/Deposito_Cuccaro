@@ -60,7 +60,7 @@ print("Dall'indice 5 a 20, escluso ogni quarto elemento", arr[5:20:4])
 # 4 
 print(c("\n***** Punto 4 - Modifica elementi, assegno 999 agli elementi dall'indice 10 a 15 escluso *****", "green"))
 print("Prima:", arr)
-arr[10:15] = 99
+arr[10:15] = 999
 print("Dopo:", arr)
 
 # 5 
