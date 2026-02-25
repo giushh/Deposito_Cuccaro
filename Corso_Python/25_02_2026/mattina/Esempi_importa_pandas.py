@@ -32,6 +32,8 @@ print("\nPersone con età superiore a 23 anni:")
 print(df_older)
 
 # Aggiungiamo una nuova colonna la persona maggiorenne
+# come si faceva con i dizionari, se non la trova la crea
+# ci andranno le righe dove la colonna età > 18
 df['Maggiorenne'] = df['Età'] >= 18
 
 # Stampa del DataFrame con la nuova colonna
