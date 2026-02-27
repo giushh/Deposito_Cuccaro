@@ -1,4 +1,4 @@
-domanda 2 - Quali sono le principali caratteristiche di PIP? E cosa vuol dire l'acronimo PIP?
+domanda 2 - Quali sono le principali caratteristiche di PIP? E cosa vuol dire l'acronimo PIP? 
 pip significa pip installs packages, ma viene anche interpretato come preferred installer program, ed è in pratica lo strumento che python mette a disposizione per scaricare e gestire librerie esterne. in sostanza è il programma che ti permette di aggiungere funzionalità al tuo progetto senza dover scrivere tutto da zero, andando a prendere i pacchetti da repository ufficiali, spesso open source
 
 pip ha 5 caratteristiche principali:
@@ -11,10 +11,10 @@ pip ha 5 caratteristiche principali:
 4. allo stesso modo consente di passare da una versione all’altra di una libreria, facendo upgrade o downgrade in base alle necessità del progetto
 
 5. si integra molto bene con gli ambienti virtuali come venv o virtualenv, che servono a creare spazi isolati per ogni progetto. questo significa che puoi avere progetti diversi con versioni diverse delle stesse librerie senza che vadano in conflitto tra loro, mantenendo tutto ordinato e sotto controllo
-
+OK GIUSTA
 ************************************************************
- domanda 3 - cos'è pip? Un sistema di aggiornamento, istallazione e gestione dei pacchetti
-
+ domanda 3 - cos'è pip? Un sistema di aggiornamento, istallazione e gestione dei pacchetti 
+OK GIUSTA
 ************************************************************
 
 domanda 4 - Cosa cambia dalla programmazione OOP alla programmazione per l'analisi dei dati?
@@ -25,15 +25,15 @@ l’obiettivo principale dell’oop è progettare bene il software, separare le 
 qui il codice è spesso più procedurale e orientato alle operazioni sui dati, meno alla modellazione di oggetti complessi
 un’altra differenza è che nell’analisi dei dati si lavora molto con operazioni vettoriali, statistiche, grafici e manipolazione di tabelle, mentre nell’oop si pensa di più all’architettura del programma
 in sintesi, con l’oop costruisci la struttura del software, con l’analisi dei dati usi python come strumento per esplorare e interpretare informazioni
-
+OK GIUSTA
 ************************************************************
 
 domanda 5 - Qual è il principale scopo di Numpy? Gestire operazioni vettoriali su strutture dati 
-
+OK GIUSTA
 ************************************************************
 
 domanda 6 - Qual'è la principale differenza tra slicing e fancy indexing ? Lo slicing è limitato a selezioni rettangolari invece il Fancy indexing può selezionare elementi non contigui e in ordine arbitrario.
-
+OK GIUSTA
 ************************************************************
 
 domanda 7 - Quali sono i principali obbiettivi/funzionalità di Numpy? Spiegali e fai un esempio 
@@ -84,15 +84,15 @@ numpy gestisce automaticamente l’espansione delle dimensioni quando una di ess
 infine numpy è progettato per essere veloce anche perché può integrarsi con codice scritto in c o fortran, quindi è alla base di molte librerie scientifiche e di machine learning
 in sintesi numpy serve a lavorare in modo efficiente con grandi quantità di numeri, usando array multidimensionali, operazioni vettoriali, funzioni matematiche e strumenti di algebra lineare, riducendo al minimo l’uso di cicli espliciti e migliorando prestazioni e leggibilità del codice
 
-
+OK GIUSTA, probabile punto extra
 ************************************************************
 
 domanda 8 - principale scopo di pandas? pre-analisi dei dati 
-
+OK GIUSTA
 ************************************************************
 
 domanda 9 - principale pipeline di pandas?  Caricamento - Esplorazione/Pulizia - Manipolazione/Analisi - Trasformazione - Output
-
+OK GIUSTA
 ************************************************************
 
 domanda 10 - Quali sono le principali funzionalità di Pandas? Spiegale e fai un esempio
@@ -147,11 +147,11 @@ qui creo una nuova colonna con le vendite del giorno precedente
 alla fine dell’analisi posso esportare i dati in vari formati come csv, excel o json con metodi come to_csv e simili 
 
 in generale pandas è così importante perché permette di caricare, esplorare, pulire, trasformare e analizzare grandi quantità di dati con una sintassi leggibile e compatta, integrandosi bene con librerie come matplotlib per i grafici o scipy per analisi più avanzate
-
+OK GIUSTA, probabile punto extra
 ************************************************************
 
 domanda 11 - Cos'è una struttura dati?  Una struttura dati è un modo per organizzare, gestire e memorizzare i dati in modo che possano essere utilizzati in modo efficiente.
-
+OK GIUSTA
 ************************************************************
 
 domanda 12 - Cosa cambia tra un Series / Data Frame e un Array? Perché abbiamo bisogno di queste strutture dati?
@@ -170,16 +170,16 @@ gli array sono ideali quando vogliamo fare calcoli matematici veloci su grandi q
 le series e i dataframe sono fondamentali quando lavoriamo con dati reali, come dataset di vendite, anagrafiche o serie temporali, dove servono etichette, filtri per colonna, raggruppamenti e operazioni tipiche dell’analisi dei dati
 
 in sintesi l’array è orientato al calcolo numerico puro, mentre series e dataframe sono orientati alla gestione e analisi di dati strutturati in modo più simile al mondo reale
-
+OK GIUSTA
 ************************************************************
 
 domanda 13 - Cosa differenzia MatplotLib e SeaBorn 
 Seaborn è costruita sopra Matplotlib e offre grafici statistici più avanzati e stile migliore di default
-
+OK GIUSTA
 ************************************************************
 
 domanda 14 - Cos'è una figure? Un insieme di grafici o uno solo se nè è presente solo uno
-
+OK GIUSTA
 ************************************************************
 
 domanda 15 - Cos'è la Visualizzazione dei dati a che cosa serve? Quali sono i suoi principali obbiettivi?
@@ -228,3 +228,4 @@ in generale la visualizzazione dei dati ha tre grandi obiettivi
 3.comunicare risultati in modo chiaro ed efficace
 
 quindi non è solo disegnare grafici, ma scegliere il grafico giusto in base al tipo di dato e al messaggio che voglio trasmettere
+OK GIUSTA
