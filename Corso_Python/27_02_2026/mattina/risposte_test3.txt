@@ -1,0 +1,230 @@
+domanda 2 - Quali sono le principali caratteristiche di PIP? E cosa vuol dire l'acronimo PIP?
+pip significa pip installs packages, ma viene anche interpretato come preferred installer program, ed è in pratica lo strumento che python mette a disposizione per scaricare e gestire librerie esterne. in sostanza è il programma che ti permette di aggiungere funzionalità al tuo progetto senza dover scrivere tutto da zero, andando a prendere i pacchetti da repository ufficiali, spesso open source
+
+pip ha 5 caratteristiche principali:
+1. ti permette di installare pacchetti in modo semplice, anche scegliendo una versione precisa oppure lasciando che venga installata l’ultima disponibile. questo è molto importante quando un progetto richiede una versione specifica di una libreria per funzionare correttamente
+
+2. a gestione automatica delle dipendenze: quando installi un pacchetto, pip controlla di quali altre librerie ha bisogno e le installa insieme, evitando errori dovuti a moduli mancanti
+
+3. pip permette anche di aggiornare i pacchetti già presenti nel sistema oppure di rimuoverli completamente, quindi non serve intervenire manualmente nelle cartelle di python. 
+
+4. allo stesso modo consente di passare da una versione all’altra di una libreria, facendo upgrade o downgrade in base alle necessità del progetto
+
+5. si integra molto bene con gli ambienti virtuali come venv o virtualenv, che servono a creare spazi isolati per ogni progetto. questo significa che puoi avere progetti diversi con versioni diverse delle stesse librerie senza che vadano in conflitto tra loro, mantenendo tutto ordinato e sotto controllo
+
+************************************************************
+ domanda 3 - cos'è pip? Un sistema di aggiornamento, istallazione e gestione dei pacchetti
+
+************************************************************
+
+domanda 4 - Cosa cambia dalla programmazione OOP alla programmazione per l'analisi dei dati?
+
+- nella programmazione oop in python si lavora soprattutto con classi e oggetti, quindi definisci delle strutture che rappresentano qualcosa del mondo reale, con attributi e metodi, e cerchi di organizzare il codice in modo modulare e riutilizzabile
+l’obiettivo principale dell’oop è progettare bene il software, separare le responsabilità, usare concetti come incapsulamento, ereditarietà e polimorfismo, e rendere il codice più ordinato e manutenibile quando il progetto diventa grande
+- nella programmazione per l’analisi dei dati invece l’attenzione si sposta sui dati stessi, quindi si lavora molto con strutture come array e dataframe usando librerie come numpy e pandas, e ti interessa trasformare, filtrare, aggregare e visualizzare informazioni
+qui il codice è spesso più procedurale e orientato alle operazioni sui dati, meno alla modellazione di oggetti complessi
+un’altra differenza è che nell’analisi dei dati si lavora molto con operazioni vettoriali, statistiche, grafici e manipolazione di tabelle, mentre nell’oop si pensa di più all’architettura del programma
+in sintesi, con l’oop costruisci la struttura del software, con l’analisi dei dati usi python come strumento per esplorare e interpretare informazioni
+
+************************************************************
+
+domanda 5 - Qual è il principale scopo di Numpy? Gestire operazioni vettoriali su strutture dati 
+
+************************************************************
+
+domanda 6 - Qual'è la principale differenza tra slicing e fancy indexing ? Lo slicing è limitato a selezioni rettangolari invece il Fancy indexing può selezionare elementi non contigui e in ordine arbitrario.
+
+************************************************************
+
+domanda 7 - Quali sono i principali obbiettivi/funzionalità di Numpy? Spiegali e fai un esempio 
+
+numpy, che significa numerical python, è una libreria fondamentale quando si lavora con calcoli numerici e analisi dei dati in python
+il suo obiettivo principale è fornire una struttura dati più efficiente delle liste, chiamata ndarray, cioè un array n dimensionale che può rappresentare vettori, matrici o strutture ancora più complesse
+la differenza rispetto alle liste normali è che gli array numpy occupano meno memoria e sono molto più veloci nelle operazioni matematiche, perché sono pensati per lavorare con numeri dello stesso tipo e con calcoli vettoriali
+una cratteristica centrale è proprio il supporto agli array multidimensionali
+per esempio
+import numpy as np
+arr = np.array([1, 2, 3, 4])
+oppure una matrice
+arr2 = np.array([[1, 2, 3], [4, 5, 6]])
+
+ogni array ha un dtype, cioè il tipo dei dati contenuti, come int o float, e una shape che indica le dimensioni, ad esempio (2, 3) per una matrice con 2 righe e 3 colonne
+numpy offre tante funzioni per creare array in modo rapido, come arange per sequenze di numeri, linspace per numeri equidistanti tra due estremi, zeros e ones per matrici inizializzate a 0 o 1
+
+un altro obiettivo importante è permettere operazioni vettoriali senza usare cicli for espliciti
+per esempio se faccio
+arr = np.array([1, 2, 3])
+arr2 = arr * 2
+ottengo automaticamente [2, 4, 6] con un’operazione element wise, cioè elemento per elemento
+questo è possibile grazie alle cosiddette funzioni universali, come np.sin, np.cos, np.exp, che applicano una funzione matematica a tutti gli elementi dell’array (d'altra parte invece funzioni che operano sui singoli elementi vengono chiamate funzioni vettoriali)
+numpy include anche molte funzioni statistiche come mean, median, std e var, quindi posso calcolare media o deviazione standard di un insieme di dati con una sola istruzione
+
+un’altra parte molto importante è l’algebra lineare, tramite il modulo numpy.linalg, che permette di fare prodotto tra matrici, calcolare determinanti, autovalori o risolvere sistemi lineari. è importante dire qui che non bisogna essere dei matematici esperti per poterle utilizzare, la semplicità della libreria permette a chiunque, data solo una panoramica sullo scopo della funzione, di utilzzarle senza troppi problemi. motivo per cui non ci si addentra nella teoria dell'algebra lineare
+
+numpy supporta anche slicing e fancy indexing
+lo slicing permette di prendere una porzione di array con la sintassi start:stop:step e restituisce una vista, quindi non copia i dati
+arr = np.array([10, 20, 30, 40, 50])
+parte = arr[1:4]
+print(parte) # [20 30 40]
+qui sto prendendo gli elementi dall’indice 1 fino al 3 compreso
+
+il fancy indexing invece usa array di indici per selezionare elementi anche non consecutivi e in questo caso crea una copia
+per esempio
+arr = np.array([10, 20, 30, 40, 50])
+selezione = arr[[0, 2, 4]]
+print(selezione) # [10 30 50]
+qui ho scelto manualmente le posizioni 0, 2 e 4
+
+un'altra funzionalità molto potente è il broadcasting
+significa che posso fare operazioni tra array di forma diversa se sono compatibili
+
+ad esempio posso sommare un vettore a tutte le righe di una matrice senza dover replicare manualmente il vettore
+numpy gestisce automaticamente l’espansione delle dimensioni quando una di esse è 1, rendendo il codice più semplice ed efficiente, epsandendo in maniera fittizia mettendo dei placeholder
+
+infine numpy è progettato per essere veloce anche perché può integrarsi con codice scritto in c o fortran, quindi è alla base di molte librerie scientifiche e di machine learning
+in sintesi numpy serve a lavorare in modo efficiente con grandi quantità di numeri, usando array multidimensionali, operazioni vettoriali, funzioni matematiche e strumenti di algebra lineare, riducendo al minimo l’uso di cicli espliciti e migliorando prestazioni e leggibilità del codice
+
+
+************************************************************
+
+domanda 8 - principale scopo di pandas? pre-analisi dei dati 
+
+************************************************************
+
+domanda 9 - principale pipeline di pandas?  Caricamento - Esplorazione/Pulizia - Manipolazione/Analisi - Trasformazione - Output
+
+************************************************************
+
+domanda 10 - Quali sono le principali funzionalità di Pandas? Spiegale e fai un esempio
+
+pandas è una libreria di python pensata per lavorare con i dati in modo semplice ma potente, soprattutto perche i dati sono organizzati in tabelle come nei fogli excel o nei database, quindi abbastanza intuitivi 
+le due strutture fondamentali sono series e dataframe
+la series è una struttura monodimensionale, simile a una colonna, mentre il dataframe è bidimensionale, quindi ha righe e colonne ed è molto simile a una tabella sql
+di solito un’analisi con pandas parte dal caricamento dei dati, ad esempio da un file csv
+import pandas as pd
+df = pd.read_csv("vendite.csv")
+print(df.head())
+con read_csv carico il file dentro un dataframe, e con head controllo le prime righe per capire se è stato letto correttamente
+le funzionalità principali di pandas si possono dividere in alcune categorie chiave
+- manipolazione dei dati
+posso selezionare colonne, filtrare righe con condizioni logiche, ordinare, unire tabelle diverse o cambiare la forma dei dati
+ad esempio
+df_filtrato = df[df["eta"] > 23]
+qui sto prendendo solo le righe dove l’età è maggiore di 23
+
+- pulizia dei dati
+nei dati reali spesso ci sono valori mancanti o duplicati
+pandas permette di rimuovere duplicati con drop_duplicates, eliminare righe con valori nulli usando dropna oppure sostituire i valori mancanti con fillna
+ad esempio
+df = df.dropna()
+oppure
+df["eta"] = df["eta"].fillna(df["eta"].mean())
+in questo modo sostituisco i valori mancanti con la media
+
+- analisi dei dati
+pandas offre funzioni statistiche e aggregazioni come mean, sum, count, describe
+una funzione molto importante è groupby, che segue il principio split apply combine
+divido i dati in gruppi, applico una funzione a ogni gruppo e poi ottengo il risultato combinato
+ad esempio
+df.groupby("citta")["vendite"].mean()
+qui calcolo la media delle vendite per ogni città
+
+- trasformazioni e ristrutturazione
+con pivot e pivot_table posso trasformare una tabella da formato lungo a formato largo
+con merge posso unire due dataframe come se stessi facendo una join in sql
+con concat posso concatenare più tabelle lungo righe o colonne
+pandas supporta anche indicizzazione avanzata e multiindex, quindi posso lavorare con dati più complessi organizzati su più livelli
+
+- serie temporali
+pandas è molto usato per dati legati al tempo
+posso convertire una colonna in formato data con pd.to_datetime, cambiare frequenza temporale, calcolare medie mobili o spostare i valori con shift
+ad esempio
+df["data"] = pd.to_datetime(df["data"])
+df["vendite_ieri"] = df["vendite"].shift(1)
+qui creo una nuova colonna con le vendite del giorno precedente
+
+- output
+alla fine dell’analisi posso esportare i dati in vari formati come csv, excel o json con metodi come to_csv e simili 
+
+in generale pandas è così importante perché permette di caricare, esplorare, pulire, trasformare e analizzare grandi quantità di dati con una sintassi leggibile e compatta, integrandosi bene con librerie come matplotlib per i grafici o scipy per analisi più avanzate
+
+************************************************************
+
+domanda 11 - Cos'è una struttura dati?  Una struttura dati è un modo per organizzare, gestire e memorizzare i dati in modo che possano essere utilizzati in modo efficiente.
+
+************************************************************
+
+domanda 12 - Cosa cambia tra un Series / Data Frame e un Array? Perché abbiamo bisogno di queste strutture dati?
+
+un array di numpy è una struttura pensata soprattutto per il calcolo numerico
+contiene dati dello stesso tipo, ha una forma definita da righe e colonne, ed è molto efficiente nelle operazioni matematiche vettoriali
+però non ha concetti come nomi di colonne o etichette significative, quindi lavora principalmente per posizione
+
+una series e un dataframe di pandas invece sono strutture pensate per lavorare con dati eterogenei e strutturati
+la series è monodimensionale ma ha un indice, cioè delle etichette associate ai valori
+il dataframe è bidimensionale e ha sia nomi di colonne sia indici di riga, quindi è più simile a una tabella di database o a un foglio excel
+un’altra differenza importante è che un array numpy di solito contiene un solo tipo di dato, mentre un dataframe può avere colonne con tipi diversi, ad esempio numeri, stringhe e date nello stesso oggetto
+
+abbiamo bisogno di queste strutture perché rispondono a esigenze diverse, dipende dallo scopo dell'applicativo che stiamo progettando
+gli array sono ideali quando vogliamo fare calcoli matematici veloci su grandi quantità di numeri
+le series e i dataframe sono fondamentali quando lavoriamo con dati reali, come dataset di vendite, anagrafiche o serie temporali, dove servono etichette, filtri per colonna, raggruppamenti e operazioni tipiche dell’analisi dei dati
+
+in sintesi l’array è orientato al calcolo numerico puro, mentre series e dataframe sono orientati alla gestione e analisi di dati strutturati in modo più simile al mondo reale
+
+************************************************************
+
+domanda 13 - Cosa differenzia MatplotLib e SeaBorn 
+Seaborn è costruita sopra Matplotlib e offre grafici statistici più avanzati e stile migliore di default
+
+************************************************************
+
+domanda 14 - Cos'è una figure? Un insieme di grafici o uno solo se nè è presente solo uno
+
+************************************************************
+
+domanda 15 - Cos'è la Visualizzazione dei dati a che cosa serve? Quali sono i suoi principali obbiettivi?
+
+la visualizzazione dei dati è il processo con cui trasformiamo numeri e tabelle in grafici, così da rendere le informazioni più comprensibili a colpo d’occhio
+serve a interpretare meglio i dati, trovare pattern, relazioni, anomalie e comunicare risultati in modo chiaro
+
+è uno strumento fondamentale nell’analisi dei dati, non solo qualcosa di estetico 
+
+gli obiettivi principali possono essere diversi
+- informativo
+quando voglio mostrare un risultato in modo chiaro per supportare una decisione, ad esempio le vendite mensili di un’azienda
+- esplorativo
+quando sto ancora analizzando i dati e uso i grafici per capire se ci sono correlazioni, outlier o distribuzioni particolari
+- narrativo
+quando voglio raccontare una storia con i dati, ad esempio l’andamento di un fenomeno nel tempo
+
+in python la visualizzazione si fa soprattutto con matplotlib e seaborn
+matplotlib è la libreria base, molto potente e personalizzabile
+il concetto chiave è che esiste una figure che è il contenitore principale, dentro cui ci sono uno o più axes che rappresentano le aree dove disegno il grafico, e poi ci sono gli axis che sono gli assi x e y
+con matplotlib posso creare grafici semplici come
+plt.plot(x, y)
+che genera un grafico a linee, utile quando voglio mostrare un andamento nel tempo
+ad esempio è perfetto per vedere come cambiano le temperature giorno dopo giorno
+
+un grafico a barre
+plt.bar(categorie, valori)
+è più indicato per confrontare quantità tra categorie diverse, ad esempio le vendite tra città
+
+un istogramma
+plt.hist(dati, bins=30)
+serve per analizzare la distribuzione di una variabile continua, ad esempio capire se i voti di un esame sono distribuiti in modo uniforme o concentrati in un intervallo
+
+uno scatter plot
+plt.scatter(x, y)
+è molto utile per studiare la relazione tra due variabili numeriche, ad esempio altezza e peso, e capire se esiste una correlazione
+
+seaborn invece è costruita sopra matplotlib e offre un’interfaccia di livello più alto, quindi permette di creare grafici statistici più facilmente e con uno stile migliore di default
+lavora molto bene con i dataframe di pandas, perché posso indicare direttamente il nome delle colonne
+ad esempio
+sns.barplot(x="day", y="total_bill", data=df)
+qui seaborn calcola automaticamente le medie e gestisce molte impostazioni interne
+in generale la visualizzazione dei dati ha tre grandi obiettivi
+1. semplificare la comprensione di grandi quantità di informazioni
+2.evidenziare pattern, trend e anomalie che a tabella non si vedrebbero facilmente
+3.comunicare risultati in modo chiaro ed efficace
+
+quindi non è solo disegnare grafici, ma scegliere il grafico giusto in base al tipo di dato e al messaggio che voglio trasmettere
